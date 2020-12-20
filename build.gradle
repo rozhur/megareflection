@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    id 'maven'
+}
+
+group 'dev.frankheijden.minecraftreflection'
+version '1.0.0'
+
+sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+}
+
+dependencies {
+    compileOnly 'com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT'
+
+    testImplementation 'com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.7.0')
+    testImplementation 'org.mockito:mockito-core:3.6.28'
+    testImplementation 'org.mockito:mockito-inline:3.6.28'
+}
+
+test {
+    useJUnitPlatform()
+}
