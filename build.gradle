@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'dev.frankheijden.minecraftreflection'
-version '1.0.0'
+version '1.0.1-DEV'
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
