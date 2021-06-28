@@ -9,8 +9,8 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class Reflection {
 
@@ -21,7 +21,7 @@ public class Reflection {
 
     public Reflection(Class<?> clazz) {
         this.clazz = clazz;
-        this.fieldMap = new HashMap<>();
+        this.fieldMap = new ConcurrentHashMap<>();
         this.methodTree = new NamedReflectionCacheTree<>();
         this.constructorTree = new ReflectionCacheTree<>(null);
     }

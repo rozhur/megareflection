@@ -1,7 +1,7 @@
 package dev.frankheijden.minecraftreflection.cache;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
@@ -10,7 +10,7 @@ public class ReflectionCacheTree<T> {
     public static final Class<?>[] EMPTY_CLASS_ARRAY = new Class[0];
 
     private T value;
-    private final Map<Class<?>, ReflectionCacheTree<T>> children = new HashMap<>();
+    private final Map<Class<?>, ReflectionCacheTree<T>> children = new ConcurrentHashMap<>();
 
     public ReflectionCacheTree(T value) {
         this.value = value;

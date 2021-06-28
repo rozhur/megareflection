@@ -1,13 +1,13 @@
 package dev.frankheijden.minecraftreflection.cache;
 
-import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class NamedReflectionCacheTree<T> {
 
-    private final Map<String, ReflectionCacheTree<T>> treeMap = new HashMap<>();
+    private final Map<String, ReflectionCacheTree<T>> treeMap = new ConcurrentHashMap<>();
 
     public T computeIfAbsent(String name, Class<?>[] parameters, Function<Class<?>[], ? extends T> mappingFunction) {
         return treeMap.computeIfAbsent(name, k -> new ReflectionCacheTree<>(null)).computeIfAbsent(parameters, mappingFunction);
