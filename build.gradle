@@ -3,14 +3,14 @@ plugins {
     id 'maven'
 }
 
-group 'dev.frankheijden.minecraftreflection'
-version '1.0.1-DEV'
+group 'org.zhdev'
+version '1.0.2-SNAPSHOT'
 
 sourceCompatibility = targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
-    maven { url 'https://papermc.io/repo/repository/maven-public/' }
+    maven { url 'https://repo.papermc.io/repository/maven-public/' }
 }
 
 dependencies {
