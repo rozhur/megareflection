@@ -18,6 +18,7 @@ public class BasicReflectionTest {
         server = Mockito.mock(CraftServer.class);
         holder = Mockito.mockStatic(Bukkit.class);
         holder.when(Bukkit::getServer).thenReturn(server);
+        holder.when(Bukkit::getVersion).thenReturn("(MC: 1.16.3)");
     }
 
     @AfterEach
