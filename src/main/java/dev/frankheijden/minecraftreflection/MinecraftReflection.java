@@ -13,7 +13,11 @@ public class MinecraftReflection extends Reflection {
     }
 
     public static String getClassName(String className) {
-        return className.contains("%s") ? String.format(className, MinecraftReflectionVersion.NMS) : className;
+        if (className.contains("%s")) {
+            return MinecraftReflectionVersion.NMS.isEmpty() ?
+                    className.replace(".%s", "") : String.format(className, MinecraftReflectionVersion.NMS);
+        }
+        return className;
     }
 
     public static MinecraftReflection of(String className) {
